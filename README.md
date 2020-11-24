@@ -66,7 +66,7 @@ And this script is very basic :</p>
   <span class="token keyword">return</span> param1 <span class="token operator">+</span> <span class="token string">" from main"</span>
 
 </code></pre>
-<p>As you can see here : the names of the parameters <strong>must be the sames</strong> as those defined in the configuration file (If it is not the case, an <code>ArgumentMissingException</code> will be raise. This is a custom exception (see Exceptions section bellow)</p>
+<p>As you can see here : the names of the parameters <strong>must be the sames</strong> as those defined in the configuration file (If it is not the case, an <code>ArgumentMissingException</code> will be raised. This is a custom exception (see Exceptions section bellow)</p>
 <p>Each Script must have a <code>main</code> function. But this function could be parameter-less (but if you add parameters to your main function, those parameter’s names must match those in the configuration file)</p>
 <h1 id="run">Run</h1>
 <h2 id="runtime-variables">Runtime variables</h2>
