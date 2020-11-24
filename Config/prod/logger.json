@@ -62,6 +62,14 @@
     "__main__" : {
       "level" : "DEBUG",
       "handlers" : ["info_file_handler", "warn_file_handler", "error_file_handler"]
+    },
+    "Core.Store.store" : {
+      "level" : "DEBUG",
+      "handlers" : ["info_file_handler", "warn_file_handler", "error_file_handler"]
+    },
+    "Core.boot" : {
+      "level" : "DEBUG",
+      "handlers" : ["info_file_handler", "warn_file_handler", "error_file_handler"]
     }
   }
 }

@@ -3,6 +3,7 @@ from Core.Processes.process import Process
 from Tools.wrapper import Tool_wrapper
 import logging
 
+
 log = logging.getLogger(__name__)
 
 def check_tools_order(process : dict) :
