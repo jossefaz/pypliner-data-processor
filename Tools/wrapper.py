@@ -20,7 +20,7 @@ class Tool_wrapper:
             self.logger.error("You must provide an environment argument to run this script '--env DEV' for example")
             raise ArgumentMissingException("--env")
         try:
-            return import_module("Tools.scripts.{}.{}".format(args.env.lower(), tool_name))
+            return import_module("Tools.Scripts.{}.{}".format(args.env.lower(), tool_name))
         except Exception as e:
             self.logger.error(str(e))
             raise ToolMissingException(tool_name)

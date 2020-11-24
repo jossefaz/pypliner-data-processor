@@ -1,0 +1,67 @@
+{
+  "version" : 1,
+  "disable_existing_logger" : true,
+  "incremental" : false,
+  "formatters" : {
+    "standard" : {
+      "format" : "%(asctime)s|%(levelname)s|%(name)s|%(message)s"
+    },
+    "error" : {
+      "format" : "%(asctime)s|%(levelname)s|<PID %(process)d:%(processName)s>|%(name)s|%(funcName)s|line:%(lineno)d|%(message)s"
+    }
+  },
+  "filters" : {
+    "info_filter" : {"()" :  "Logger.filters.InfoFilter"},
+    "error_filter" : {"()" :  "Logger.filters.ErrorFilter"},
+    "warn_filter" : {"()" :  "Logger.filters.WarnFilter"}
+  },
+  "handlers" : {
+    "console" : {
+      "class" : "logging.StreamHandler",
+      "level" : "DEBUG",
+      "formatter" : "standard",
+      "stream" : "ext://sys.stdout"
+    },
+    "info_file_handler" : {
+      "class" : "logging.handlers.RotatingFileHandler",
+      "level" : "DEBUG",
+      "formatter" : "standard",
+      "filename" : "info.log",
+      "maxBytes" : 10485760,
+      "backupCount" : 20,
+      "encoding" : "utf8",
+      "filters" : ["info_filter"]
+    },
+    "error_file_handler" : {
+      "class" : "logging.handlers.RotatingFileHandler",
+      "level" : "ERROR",
+      "formatter" : "standard",
+      "filename" : "error.log",
+      "maxBytes" : 10485760,
+      "backupCount" : 20,
+      "encoding" : "utf8",
+      "filters" : ["error_filter"]
+    },
+    "warn_file_handler" : {
+      "class" : "logging.handlers.RotatingFileHandler",
+      "level" : "WARN",
+      "formatter" : "standard",
+      "filename" : "warn.log",
+      "maxBytes" : 10485760,
+      "backupCount" : 20,
+      "encoding" : "utf8",
+      "filters" : ["warn_filter"]
+    }
+  },
+  "root" : {
+    "level" : "DEBUG",
+    "handlers" : ["console", "info_file_handler", "warn_file_handler", "error_file_handler"],
+    "propagate" : "no"
+  },
+  "loggers" : {
+    "__main__" : {
+      "level" : "DEBUG",
+      "handlers" : ["info_file_handler", "warn_file_handler", "error_file_handler"]
+    }
+  }
+}
