@@ -32,4 +32,18 @@
       }
  ]
 </code></pre>
+<p>Now let’s explain the different parameters :</p>
+<p>The configuration file is basically a list of Objects (dictionnary), where each of those represents an execution pipeline.</p>
+<p>So it begins like a list (<code>[]</code>).<br>
+Inside of it we define a global object for each pipelines.<br>
+The keys of this object represents the name of the process (feel free to give a name that is very explicit on what this process aims to achieve).</p>
+<p>So far we have</p>
+<pre><code>    [
+       {
+           "run_my_first_script" : {
+           }
+       }
+   ]
+</code></pre>
+<p>Now we need some mandatory keys to indicates which script this process will execute and what are its arguments.</p>
 
