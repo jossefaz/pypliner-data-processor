@@ -24,7 +24,7 @@
        "run_example2" : {  
               "Tool" : "tool_example",  
               "Args" : {  
-                 "param1" : "run_example",  
+                 "param1" : "This is a test",  
                  "param2" : "This is another test"  
         }  
       },  
