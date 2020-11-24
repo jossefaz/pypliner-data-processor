@@ -55,7 +55,8 @@ Let’s add the <code>Tool</code> and <code>Args</code> key :</p>
           }  
   }
 </code></pre>
-<p>The <strong><code>Tool</code></strong>  key must be the name of an existing script (that you will build) under the directory <code>Tools</code> -&gt; <code>executables</code> -&gt; <code>&lt;ENVIRONEMENT&gt;</code></p>
+<p>The <strong><code>Tool</code></strong>  key must be the name of an existing script (that you will build) under the directory <code>Tools</code> -&gt; <code>executables</code> -&gt; <code>&lt;ENVIRONMENT&gt;</code><br>
+The <code>ENVIRONMENT</code> is a folder based on the defined runtime environment (dev, prod and test) which is defined by the <code>--env</code> runtime variable (see Run section bellow)</p>
 <h1 id="run">Run</h1>
 <h2 id="runtime-variables">Runtime variables</h2>
 <ul>
