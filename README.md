@@ -57,7 +57,7 @@ Let’s add the <code>Tool</code> and <code>Args</code> key :</p>
 </code></pre>
 <p>The <strong><code>Tool</code></strong>  key must be the name of an existing script (that you will build) under the directory <code>Tools</code> -&gt; <code>executables</code> -&gt; <code>&lt;ENVIRONMENT&gt;</code><br>
 The <code>ENVIRONMENT</code> is a folder based on the defined runtime environment (dev, prod and test) which is defined by the <code>--env</code> runtime variable (see Run section bellow)</p>
-<p>There is a <strong>tool_example</strong> script that you see here in the example is a script that you can find in the <code>Tools</code> -&gt; <code>executables</code> -&gt; <code>dev</code> directory<br>
+<p>There is a <strong>tool_example</strong> script that you see here is a script that you can find in the <code>Tools</code> -&gt; <code>executables</code> -&gt; <code>dev</code> directory<br>
 And this script is very basic :</p>
 <pre class=" language-python"><code class="prism  language-python">
 <span class="token keyword">def</span> <span class="token function">main</span><span class="token punctuation">(</span>param1<span class="token punctuation">,</span> param2<span class="token punctuation">)</span><span class="token punctuation">:</span>  
