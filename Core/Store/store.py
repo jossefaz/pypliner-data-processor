@@ -51,4 +51,4 @@ class Store:
                         index += 1
 
 
-instance = Store().instance
+instance = Store.instance()
