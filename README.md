@@ -88,7 +88,7 @@ And this script is very basic :</p>
                      <span class="token string">"param2"</span> <span class="token punctuation">:</span> <span class="token string">"This is another test 2"</span>  
             <span class="token punctuation">}</span>  
           <span class="token punctuation">}</span><span class="token punctuation">,</span>  
-           <span class="token string">"order"</span> <span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token string">"run_example"</span><span class="token punctuation">,</span> <span class="token string">"run_example2"</span><span class="token punctuation">]</span>  
+           <span class="token string">"order"</span> <span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token string">"run_example"</span><span class="token punctuation">,</span> <span class="token string">"run_example2"</span><span class="token punctuation">]</span> <span class="token operator">&lt;&lt;=</span><span class="token operator">==</span> To be able to inject between processes<span class="token punctuation">,</span> you must keep the order logic too<span class="token punctuation">.</span> You cannot inject the result <span class="token keyword">of</span> a process that you did not execute yet 
           <span class="token punctuation">}</span>
      <span class="token punctuation">]</span>
 </code></pre>
