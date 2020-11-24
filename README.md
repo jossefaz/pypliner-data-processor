@@ -12,25 +12,25 @@
 <pre><code>git clone https://github.com/yossefaz/pypliner-data-processor.git
 </code></pre>
 <p>Create a new configuration file (.json) following the example below.</p>
-<pre><code>    [  
-        {  
-        "run_example" : {  
-              "Tool" : "tool_example",  
-              "Args" : {  
-                 "param1" : "This is a test",  
-                 "param2" : "This is another test"  
-              }  
-        },  
-       "run_example2" : {  
-              "Tool" : "tool_example",  
-              "Args" : {  
-                 "param1" : "This is a test",  
-                 "param2" : "This is another test"  
-        }  
-      },  
-       "order" : ["run_example", "run_example2"]  
-      }
- ]
+<pre class=" language-json"><code class="prism  language-json">        <span class="token punctuation">[</span>  
+            <span class="token punctuation">{</span>  
+            <span class="token string">"run_example"</span> <span class="token punctuation">:</span> <span class="token punctuation">{</span>  
+                  <span class="token string">"Tool"</span> <span class="token punctuation">:</span> <span class="token string">"tool_example"</span><span class="token punctuation">,</span>  
+                  <span class="token string">"Args"</span> <span class="token punctuation">:</span> <span class="token punctuation">{</span>  
+                     <span class="token string">"param1"</span> <span class="token punctuation">:</span> <span class="token string">"This is a test"</span><span class="token punctuation">,</span>  
+                     <span class="token string">"param2"</span> <span class="token punctuation">:</span> <span class="token string">"This is another test"</span>  
+                  <span class="token punctuation">}</span>  
+            <span class="token punctuation">}</span><span class="token punctuation">,</span>  
+           <span class="token string">"run_example2"</span> <span class="token punctuation">:</span> <span class="token punctuation">{</span>  
+                  <span class="token string">"Tool"</span> <span class="token punctuation">:</span> <span class="token string">"tool_example"</span><span class="token punctuation">,</span>  
+                  <span class="token string">"Args"</span> <span class="token punctuation">:</span> <span class="token punctuation">{</span>  
+                     <span class="token string">"param1"</span> <span class="token punctuation">:</span> <span class="token string">"This is a test"</span><span class="token punctuation">,</span>  
+                     <span class="token string">"param2"</span> <span class="token punctuation">:</span> <span class="token string">"This is another test"</span>  
+            <span class="token punctuation">}</span>  
+          <span class="token punctuation">}</span><span class="token punctuation">,</span>  
+           <span class="token string">"order"</span> <span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token string">"run_example"</span><span class="token punctuation">,</span> <span class="token string">"run_example2"</span><span class="token punctuation">]</span>  
+          <span class="token punctuation">}</span>
+     <span class="token punctuation">]</span>
 </code></pre>
 <p>Now let’s explain the different parameters :</p>
 <p>The configuration file is basically a list of Objects (dictionnary), where each of those represents an execution pipeline.</p>
@@ -38,25 +38,35 @@
 Inside of it we define a global object for each pipelines.<br>
 The keys of this object represents the name of the process (feel free to give a name that is very explicit on what this process aims to achieve).</p>
 <p>So far we have</p>
-<pre><code>    [
-       {
-           "run_my_first_script" : {
-           }
-       }
-   ]
+<pre class=" language-json"><code class="prism  language-json">        <span class="token punctuation">[</span>
+           <span class="token punctuation">{</span>
+	           <span class="token string">"run_my_first_script"</span> <span class="token punctuation">:</span> <span class="token punctuation">{</span>
+	           <span class="token punctuation">}</span>
+           <span class="token punctuation">}</span>
+       <span class="token punctuation">]</span>
 </code></pre>
 <p>Now we need some mandatory keys to indicates which script this process will execute and what are its arguments.<br>
 Let’s add the <code>Tool</code> and <code>Args</code> key :</p>
-<pre><code> "run_my_first_script" : {
-     "Tool" : "tool_example"
-      "Args" : {  
-          "param1" : "This is a test",  
-          "param2" : "This is another test"  
-          }  
-  }
+<pre class=" language-json"><code class="prism  language-json"> <span class="token string">"run_my_first_script"</span> <span class="token punctuation">:</span> <span class="token punctuation">{</span>
+     <span class="token string">"Tool"</span> <span class="token punctuation">:</span> <span class="token string">"tool_example"</span>
+      <span class="token string">"Args"</span> <span class="token punctuation">:</span> <span class="token punctuation">{</span>  
+          <span class="token string">"param1"</span> <span class="token punctuation">:</span> <span class="token string">"This is a test"</span><span class="token punctuation">,</span>  
+          <span class="token string">"param2"</span> <span class="token punctuation">:</span> <span class="token string">"This is another test"</span>  
+          <span class="token punctuation">}</span>  
+  <span class="token punctuation">}</span>
 </code></pre>
 <p>The <strong><code>Tool</code></strong>  key must be the name of an existing script (that you will build) under the directory <code>Tools</code> -&gt; <code>executables</code> -&gt; <code>&lt;ENVIRONMENT&gt;</code><br>
 The <code>ENVIRONMENT</code> is a folder based on the defined runtime environment (dev, prod and test) which is defined by the <code>--env</code> runtime variable (see Run section bellow)</p>
+<p>There is a <strong>tool_example</strong> script that you see here in the example is a script that you can find in the <code>Tools</code> -&gt; <code>executables</code> -&gt; <code>dev</code> directory<br>
+And this script is very basic :</p>
+<pre class=" language-python"><code class="prism  language-python">
+<span class="token keyword">def</span> <span class="token function">main</span><span class="token punctuation">(</span>param1<span class="token punctuation">,</span> param2<span class="token punctuation">)</span><span class="token punctuation">:</span>  
+  <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"param1 is : "</span><span class="token punctuation">,</span> param1<span class="token punctuation">)</span>  
+  <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"param2 is : "</span><span class="token punctuation">,</span> param2<span class="token punctuation">)</span>  
+  <span class="token keyword">return</span> param1 <span class="token operator">+</span> <span class="token string">" from main"</span>
+
+</code></pre>
+<p>As you can see here : the names of the parameters must be the same as those defined in the configuration file (If it is not the case, an <code>ArgumentMissingException</code> will be raise. This is a custom execption (see Exceptions section bellow)</p>
 <h1 id="run">Run</h1>
 <h2 id="runtime-variables">Runtime variables</h2>
 <ul>
