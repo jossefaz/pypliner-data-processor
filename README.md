@@ -24,8 +24,8 @@
            <span class="token string">"run_example2"</span> <span class="token punctuation">:</span> <span class="token punctuation">{</span>  
                   <span class="token string">"Tool"</span> <span class="token punctuation">:</span> <span class="token string">"tool_example"</span><span class="token punctuation">,</span>  
                   <span class="token string">"Args"</span> <span class="token punctuation">:</span> <span class="token punctuation">{</span>  
-                     <span class="token string">"param1"</span> <span class="token punctuation">:</span> <span class="token string">"This is a test"</span><span class="token punctuation">,</span>  
-                     <span class="token string">"param2"</span> <span class="token punctuation">:</span> <span class="token string">"This is another test"</span>  
+                     <span class="token string">"param1"</span> <span class="token punctuation">:</span> <span class="token string">"This is a test 2"</span><span class="token punctuation">,</span>  
+                     <span class="token string">"param2"</span> <span class="token punctuation">:</span> <span class="token string">"This is another test 2"</span>  
             <span class="token punctuation">}</span>  
           <span class="token punctuation">}</span><span class="token punctuation">,</span>  
            <span class="token string">"order"</span> <span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token string">"run_example"</span><span class="token punctuation">,</span> <span class="token string">"run_example2"</span><span class="token punctuation">]</span>  
@@ -68,6 +68,7 @@ And this script is very basic :</p>
 </code></pre>
 <p>As you can see here : the names of the parameters <strong>must be the sames</strong> as those defined in the configuration file (If it is not the case, an <code>ArgumentMissingException</code> will be raised. This is a custom exception (see Exceptions section bellow)</p>
 <p>Each Script must have a <code>main</code> function. But this function could be parameter-less (but if you add parameters to your main function, those parameter’s names must match those in the configuration file)</p>
+<p>The <strong>order</strong> key has a value of a list that defines in which order the pypliner will execute those scripts. So the processes configuration order does not matter, only the <strong>order</strong> list will define the execution order of the scripts.</p>
 <h1 id="run">Run</h1>
 <h2 id="runtime-variables">Runtime variables</h2>
 <ul>
