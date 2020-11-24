@@ -66,7 +66,7 @@ And this script is very basic :</p>
   <span class="token keyword">return</span> param1 <span class="token operator">+</span> <span class="token string">" from main"</span>
 
 </code></pre>
-<p>As you can see here : the names of the parameters must be the same as those defined in the configuration file (If it is not the case, an <code>ArgumentMissingException</code> will be raise. This is a custom execption (see Exceptions section bellow)</p>
+<p>As you can see here : the names of the parameters <strong>must be the sames</strong> as those defined in the configuration file (If it is not the case, an <code>ArgumentMissingException</code> will be raise. This is a custom exception (see Exceptions section bellow)</p>
 <h1 id="run">Run</h1>
 <h2 id="runtime-variables">Runtime variables</h2>
 <ul>
