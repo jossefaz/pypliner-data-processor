@@ -9,7 +9,7 @@
 <p>The power of this tool lies in the fact that it allows to inject the result of a given script to a target script as a parameter. All this based only on the simple configuration file (JSON).</p>
 <h1 id="install">Install</h1>
 <p>First clone this repository</p>
-<pre><code>git clone https://github.com/yossefaz/pypliner-data-processor.git
+<pre><code>git clone https://github.com/jossefaz/pypliner-data-processor.git
 </code></pre>
 <p>Create a new configuration file (.json) following the example below.</p>
 <pre class=" language-json"><code class="prism  language-json">        <span class="token punctuation">[</span>  
